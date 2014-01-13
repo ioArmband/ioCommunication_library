@@ -1,12 +1,10 @@
 package org.tse.pri.ioarmband.io.message;
 
-import java.io.Serializable;
-
 import org.tse.pri.ioarmband.io.component.GenericContainer;
 import org.tse.pri.ioarmband.io.message.enums.ViewAnimation;
 import org.tse.pri.ioarmband.io.message.enums.ViewChangeMode;
 
-public class ChangeViewMessage implements Serializable{
+public class ChangeViewMessage extends Message{
 	/**
 	 * 
 	 */

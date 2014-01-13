@@ -1,14 +1,8 @@
 package org.tse.pri.ioarmband.io.message;
 
-import java.io.Serializable;
-
 import org.tse.pri.ioarmband.io.component.GenericContainer;
 
-public class GenericAppMessage implements Serializable{
-
-	/**
-	 * 
-	 */
+public class GenericAppMessage extends Message{
 	private static final long serialVersionUID = 6745639794184982795L;
 	
 	private String name;

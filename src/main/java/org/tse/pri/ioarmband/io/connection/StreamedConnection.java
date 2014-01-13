@@ -1,10 +1,8 @@
 package org.tse.pri.ioarmband.io.connection;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.HashSet;
@@ -45,11 +43,8 @@ public class StreamedConnection implements IConnection, Runnable{
 	
 	public void run() {
 		try {
-			InputStreamReader isr = new InputStreamReader(in);
-			BufferedReader br = new BufferedReader(isr);
 			while(running){
-				String input = br.readLine();
-				extractCommand(input);
+				extractCommand(in);
 			}
 
 		} catch (IOException e) {
@@ -57,11 +52,10 @@ public class StreamedConnection implements IConnection, Runnable{
 		}
 	}
 	
-	private synchronized void extractCommand(String input){
+	private synchronized void extractCommand(InputStream input) throws IOException{
 		
 		Command command = null;
-		
-		//TODO: command dezerializer and analyser
+		Command.deserialize(input);
 		
 		dispatchCommandReceived(command);
 	}
@@ -70,11 +64,7 @@ public class StreamedConnection implements IConnection, Runnable{
 		try {
 			OutputStreamWriter osw = new OutputStreamWriter(out);
 			BufferedWriter bw = new BufferedWriter(osw);
-			
-			String output = null;
-			//TODO: Command serializer
-			
-			bw.write(output);
+			Command.serialize(command, out);
 			bw.newLine();
 			bw.flush();
 			

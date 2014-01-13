@@ -1,11 +1,8 @@
 package org.tse.pri.ioarmband.io.message;
 
-import java.io.Serializable;
-
 import org.tse.pri.ioarmband.io.message.enums.GestureType;
 
-public class GestureMessage implements Serializable {
-
+public class GestureMessage extends Message{
 	/**
 	 * 
 	 */

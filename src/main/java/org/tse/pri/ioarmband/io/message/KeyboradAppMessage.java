@@ -2,7 +2,9 @@ package org.tse.pri.ioarmband.io.message;
 
 import org.tse.pri.ioarmband.io.message.enums.KeyboardType;
 
-public class KeyboradAppMessage {
+public class KeyboradAppMessage  extends Message{
+	private static final long serialVersionUID = 4679425979414404587L;
+
 	KeyboardType keyboardType;
 
 	public KeyboardType getKeyboardType() {
