@@ -10,8 +10,8 @@ import org.apache.log4j.Logger;
 
 public class Command{
 	private static final Logger logger = Logger.getLogger(Command.class);
-	String clazz;
-	Message message;
+	private String clazz;
+	private Message message;
 	
 	public Command(Message message) {
 		this.message = message;
