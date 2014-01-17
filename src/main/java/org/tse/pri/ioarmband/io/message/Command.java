@@ -14,8 +14,8 @@ public class Command{
 	private Message message;
 	
 	public Command(Message message) {
-		this.message = message;
-		clazz = message.getClass().getName();
+		this.setMessage(message);
+		setClazz(message.getClass().getName());
 	}
 	
 	public static void serialize(Command command, OutputStream output) throws IOException{
@@ -32,6 +32,22 @@ public class Command{
 			logger.error("Error when deserializing objet", e);
 		}
 		return command;
+	}
+
+	public String getClazz() {
+		return clazz;
+	}
+
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
+	}
+
+	public Message getMessage() {
+		return message;
+	}
+
+	public void setMessage(Message message) {
+		this.message = message;
 	}
 
 }
