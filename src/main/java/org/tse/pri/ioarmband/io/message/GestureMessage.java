@@ -3,6 +3,11 @@ package org.tse.pri.ioarmband.io.message;
 import org.tse.pri.ioarmband.io.message.enums.GestureType;
 
 public class GestureMessage extends Message{
+	@Override
+	public String toString() {
+		return "GestureMessage [type=" + type + ", SourceName=" + SourceName
+				+ "]";
+	}
 	/**
 	 * 
 	 */

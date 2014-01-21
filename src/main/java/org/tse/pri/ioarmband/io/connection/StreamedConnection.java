@@ -1,10 +1,16 @@
 package org.tse.pri.ioarmband.io.connection;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,8 +30,10 @@ public class StreamedConnection implements IConnection, Runnable{
 		super();
 		this.in = in;
 		this.out = out;
+		running = true;
 		communicationThread = new Thread(this);
 		communicationThread.start();
+		logger.info("Connection - Begin");
 	}
 
 	public void close() {
@@ -47,7 +55,10 @@ public class StreamedConnection implements IConnection, Runnable{
 				extractCommand(in);
 			}
 
-		} catch (IOException e) {
+		} catch (SocketException e) {
+			close();
+			logger.info("Connection closed");
+		}catch (IOException e) {
 			logger.error("Problem while running StreamedConnection", e);
 		}
 	}
@@ -55,7 +66,10 @@ public class StreamedConnection implements IConnection, Runnable{
 	private synchronized void extractCommand(InputStream input) throws IOException{
 		
 		Command command = null;
+		 //BufferedReader d = new BufferedReader(new InputStreamReader(in));
+		 //logger.info("Recepting: ["+ d.readLine()+"]");
 		Command.deserialize(input);
+		
 		
 		dispatchCommandReceived(command);
 	}
@@ -87,6 +101,7 @@ public class StreamedConnection implements IConnection, Runnable{
 		}
 	}
 	private void dispatchCommandReceived(Command command){
+		logger.info("Connection - Command Received");
 		for (IConnectionListener listener : connectionListeners) {
 			listener.onCommandReiceved(command);
 		}

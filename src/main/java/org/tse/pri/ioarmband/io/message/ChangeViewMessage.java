@@ -32,6 +32,11 @@ public class ChangeViewMessage extends Message{
 	public void setContainer(GenericContainer container) {
 		this.container = container;
 	}
+	@Override
+	public String toString() {
+		return "ChangeViewMessage [animation=" + animation + ", changeMode="
+				+ changeMode + ", container=" + container + "]";
+	}
 	
 
 	

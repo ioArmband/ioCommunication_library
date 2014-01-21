@@ -21,5 +21,11 @@ public class GenericAppMessage extends Message{
 		this.mainView = mainView;
 	}
 	
+	@Override
+	public String toString() {
+		return "GenericAppMessage [name=" + name + ", mainView=" + mainView
+				+ "]";
+	}
+	
 	
 }
