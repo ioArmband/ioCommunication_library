@@ -7,12 +7,14 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Command implements Serializable{
 	private static final long serialVersionUID = 3752115578936340428L;
 	
-	private static final Logger logger = Logger.getLogger(Command.class);
+	private static final Logger logger = LoggerFactory.getLogger(Command.class);
 	private String clazz;
 	private Message message;
 	

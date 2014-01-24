@@ -1,30 +1,27 @@
 package org.tse.pri.ioarmband.io.connection;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Reader;
 import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tse.pri.ioarmband.io.message.Command;
 
 public class StreamedConnection implements IConnection, Runnable{
 
 
-	private static final Logger logger = Logger.getLogger(StreamedConnection.class);
+	private static final Logger logger = LoggerFactory.getLogger(StreamedConnection.class);
 	protected InputStream in;
 	protected OutputStream out;
 	protected Thread communicationThread;
 	protected boolean running;
+	
 	
 	public StreamedConnection(InputStream in, OutputStream out) {
 		super();
