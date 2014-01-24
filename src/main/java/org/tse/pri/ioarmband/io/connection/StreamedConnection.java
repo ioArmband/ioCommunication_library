@@ -19,10 +19,36 @@ public class StreamedConnection implements IConnection, Runnable{
 	protected InputStream in;
 	protected OutputStream out;
 	protected Thread communicationThread;
-	protected boolean running;
+	protected boolean running = false;
 	
 	public StreamedConnection(InputStream in, OutputStream out) {
 		super();
+		open(in, out);
+	}
+
+	public void close() {
+		running = false;
+		try {
+			if(in != null){
+				in.close();
+			}
+			if(out != null){
+				out.close();
+			}
+		} catch (IOException e) {
+			logger.error("StreamedConnection.close(): error while closing connection",e);
+		}
+		in = null;
+		out = null;
+		dispatchConnectionClose();
+	}
+	
+	public void open(InputStream in, OutputStream out) {
+		if(running){
+			logger.warn("Try to open a connection already open, please use close() before.");
+			return;
+		}
+		
 		this.in = in;
 		this.out = out;
 		running = true;
@@ -30,18 +56,6 @@ public class StreamedConnection implements IConnection, Runnable{
 		communicationThread.start();
 		logger.info("Connection - Begin");
 	}
-
-	public void close() {
-		try {
-			running = false;
-			in.close();
-			out.close();
-			dispatchConnectionClose();
-		} catch (IOException e) {
-			logger.error("StreamedConnection.close(): error while closing connection",e);
-		}
-	}
-
 
 	
 	public void run() {
