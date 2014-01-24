@@ -1,6 +1,7 @@
 package org.tse.pri.ioarmband.io.connection;
 
 import java.io.BufferedWriter;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -70,11 +71,9 @@ public class StreamedConnection implements IConnection, Runnable{
 				extractCommand(in);
 			}
 
-		} catch (SocketException e) {
-			close();
+		} catch (IOException e) {
 			logger.info("Connection closed");
-		}catch (IOException e) {
-			logger.error("Problem while running StreamedConnection", e);
+			close();
 		}
 	}
 	
