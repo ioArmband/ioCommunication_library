@@ -1,15 +1,10 @@
 package org.tse.pri.ioarmband.io.connection;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Reader;
 import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
@@ -79,7 +74,6 @@ public class StreamedConnection implements IConnection, Runnable{
 			OutputStreamWriter osw = new OutputStreamWriter(out);
 			BufferedWriter bw = new BufferedWriter(osw);
 			Command.serialize(command, out);
-			bw.newLine();
 			bw.flush();
 			
 		} catch (IOException e) {
