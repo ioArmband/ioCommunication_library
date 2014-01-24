@@ -29,6 +29,9 @@ public class StreamedConnection implements IConnection, Runnable{
 	}
 
 	public void close() {
+		if(running == false){
+			return;
+		}
 		running = false;
 		try {
 			if(in != null){
@@ -76,13 +79,8 @@ public class StreamedConnection implements IConnection, Runnable{
 	}
 	
 	private synchronized void extractCommand(InputStream input) throws IOException{
-		
 		Command command = null;
-		 //BufferedReader d = new BufferedReader(new InputStreamReader(in));
-		 //logger.info("Recepting: ["+ d.readLine()+"]");
-		Command.deserialize(input);
-		
-		
+		command = Command.deserialize(input);
 		dispatchCommandReceived(command);
 	}
 	
