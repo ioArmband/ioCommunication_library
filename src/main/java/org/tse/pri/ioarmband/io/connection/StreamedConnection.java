@@ -9,18 +9,20 @@ import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tse.pri.ioarmband.io.message.Command;
 
 public class StreamedConnection implements IConnection, Runnable{
 
 
-	private static final Logger logger = Logger.getLogger(StreamedConnection.class);
+	private static final Logger logger = LoggerFactory.getLogger(StreamedConnection.class);
 	protected InputStream in;
 	protected OutputStream out;
 	protected Thread communicationThread;
-	protected boolean running = false;
+	protected boolean running;
 	
+
 	public StreamedConnection(InputStream in, OutputStream out) {
 		super();
 		open(in, out);
@@ -56,6 +58,7 @@ public class StreamedConnection implements IConnection, Runnable{
 		communicationThread.start();
 		logger.info("Connection - Begin");
 	}
+
 
 	
 	public void run() {
