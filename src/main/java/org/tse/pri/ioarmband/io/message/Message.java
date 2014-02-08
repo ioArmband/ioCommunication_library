@@ -1,9 +1,5 @@
 package org.tse.pri.ioarmband.io.message;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,6 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+
+import com.googlecode.openbeans.BeanInfo;
+import com.googlecode.openbeans.IntrospectionException;
+import com.googlecode.openbeans.Introspector;
+import com.googlecode.openbeans.PropertyDescriptor;
 
 public class Message  implements Serializable{
 	private static final long serialVersionUID = 7529035990603487780L;

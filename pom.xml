@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.tse.pri.ioarmband</groupId>
-  <artifactId>io</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>org.tse.pri.ioarmband</groupId>
+	<artifactId>io</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>io</name>
-  <url>http://maven.apache.org</url>
+	<name>io</name>
+	<url>http://maven.apache.org</url>
 
 	<build>
 		<finalName>ioCommunication</finalName>
@@ -24,29 +24,36 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-   <dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-log4j12</artifactId>
-	<version>1.7.5</version>
-</dependency>
-            
-   <dependency>
-	<groupId>org.slf4j</groupId>
-	<artifactId>slf4j-api</artifactId>
-	<version>1.7.5</version>
-</dependency>
-            
-  </dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode</groupId>
+			<artifactId>openbeans</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/openbeans-1.0.jar</systemPath>
+		</dependency>
+	</dependencies>
 </project>
