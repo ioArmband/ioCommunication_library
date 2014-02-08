@@ -1,12 +1,12 @@
 package org.tse.pri.ioarmband.io.message;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.googlecode.openbeans.BeanInfo;
 import com.googlecode.openbeans.IntrospectionException;
@@ -16,8 +16,7 @@ import com.googlecode.openbeans.PropertyDescriptor;
 public class Message  implements Serializable{
 	private static final long serialVersionUID = 7529035990603487780L;
 	private String commandName;
-	private static final Logger logger = Logger.getLogger(Message.class);
-
+	private static final Logger logger = LoggerFactory.getLogger(Command.class);
 	public Message(String commandName) {
 		this.commandName = commandName;
 	}
