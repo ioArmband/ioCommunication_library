@@ -29,8 +29,8 @@ public class Message  implements Serializable{
 		this.commandName = commandName;
 	}
 
-	public Map<String, String> extractParams(){
-		HashMap<String, String> out = new HashMap<String, String>();
+	public Map<String, Object> extractParams(){
+		HashMap<String, Object> out = new HashMap<String, Object>();
 
 		BeanInfo beanInfo;
 		try {

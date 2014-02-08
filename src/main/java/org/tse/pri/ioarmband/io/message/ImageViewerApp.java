@@ -6,8 +6,9 @@ public class ImageViewerApp extends Message{
 
 	Image image;
 	
-	public ImageViewerApp() {
+	public ImageViewerApp(Image image) {
 		super("image_viewer_app");
+		image = image;
 	}
 	
 	public Image getImage() {
