@@ -3,6 +3,7 @@ package org.tse.pri.ioarmband.io.message;
 import java.awt.Image;
 import java.awt.image.RenderedImage;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import javax.imageio.ImageIO;
@@ -23,6 +24,10 @@ public class ImageViewerApp extends Message{
 		this.image = image;
 	}
 	private void writeObject(ObjectOutputStream out) throws IOException {
-		ImageIO.write((RenderedImage) image, "png", out); // png is lossless
+		ImageIO.write((RenderedImage) image, "jpg", out);
 	}
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        image = ImageIO.read(in);
+    }
 }
