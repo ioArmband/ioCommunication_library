@@ -13,9 +13,11 @@ public class AppMessage  extends Message{
 		this.appName = applicationName;
 		this.params = params;
 	}
+	
 	public AppMessage(String applicationName){
 		this(applicationName, "");
 	}
+	
 	public AppMessage(AppStd appStd){
 		this(appStd.name, appStd.params);
 	}
@@ -44,6 +46,7 @@ public class AppMessage  extends Message{
 		KEYBOARD_ALPHA("keyboard","alphabetic"),
 		KEYBOARD_NUM("keyboard","numeric"),
 		SLIDE_SWIPER("slider");
+		//("slider");
 		
 		
 		String name;
