@@ -5,6 +5,7 @@ import org.tse.pri.ioarmband.io.message.enums.ViewAnimation;
 import org.tse.pri.ioarmband.io.message.enums.ViewChangeMode;
 
 public class ChangeViewMessage extends Message{
+
 	/**
 	 * 
 	 */
@@ -13,6 +14,10 @@ public class ChangeViewMessage extends Message{
 	private ViewAnimation animation;
 	private ViewChangeMode changeMode;
 	private GenericContainer container;
+	
+	public ChangeViewMessage() {
+		super("change_view");
+	}
 	
 	public ViewAnimation getAnimation() {
 		return animation;

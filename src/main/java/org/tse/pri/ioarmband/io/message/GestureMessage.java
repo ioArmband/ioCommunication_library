@@ -3,11 +3,7 @@ package org.tse.pri.ioarmband.io.message;
 import org.tse.pri.ioarmband.io.message.enums.GestureType;
 
 public class GestureMessage extends Message{
-	@Override
-	public String toString() {
-		return "GestureMessage [type=" + type + ", SourceName=" + SourceName
-				+ "]";
-	}
+	
 	/**
 	 * 
 	 */
@@ -16,6 +12,11 @@ public class GestureMessage extends Message{
 	private GestureType type;
 	private String SourceName;
 	
+	
+	public GestureMessage() {
+		super("gesture");
+	}
+
 	public GestureType getType() {
 		return type;
 	}
@@ -29,4 +30,9 @@ public class GestureMessage extends Message{
 		SourceName = sourceName;
 	}
 	
+	@Override
+	public String toString() {
+		return "GestureMessage [type=" + type + ", SourceName=" + SourceName
+				+ "]";
+	}
 }

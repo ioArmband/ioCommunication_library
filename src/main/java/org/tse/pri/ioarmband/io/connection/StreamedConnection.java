@@ -84,6 +84,7 @@ public class StreamedConnection implements IConnection, Runnable{
 	}
 	
 	public void sendCommand(Command command) {
+		logger.info("sending: " + command);
 		try {
 			OutputStreamWriter osw = new OutputStreamWriter(out);
 			BufferedWriter bw = new BufferedWriter(osw);
