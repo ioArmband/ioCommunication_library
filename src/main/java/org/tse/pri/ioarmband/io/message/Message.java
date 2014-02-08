@@ -42,7 +42,7 @@ public class Message  implements Serializable{
 				Method getter = propDescriptor.getReadMethod();
 				if(getter != null){
 					logger.debug("extractParams() - access to method :" + propDescriptor.getName());
-					out.put(propDescriptor.getName(), ((Object) getter.invoke(this)).toString());
+					out.put(propDescriptor.getName(), ((Object) getter.invoke(this)));
 				}
 			}
 			return out;
