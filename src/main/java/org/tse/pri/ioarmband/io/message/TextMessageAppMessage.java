@@ -1,23 +1,21 @@
 package org.tse.pri.ioarmband.io.message;
 
-import java.awt.Image;
-
-
-
 public class TextMessageAppMessage extends Message   {
 	private static final long serialVersionUID = 6745634928545223211L;
 
+	String source;
 	String message;
 	String author;
+	String encodedImage;
 
-	public TextMessageAppMessage(String author, String message, Image image) {
+	public TextMessageAppMessage( String source, String author, String message, String encodedImage) {
 		super("text_message_app");
+		this.source = source;
 		this.message = message;
 		this.author = author;
 	}
-	public TextMessageAppMessage(String author, String message) {
-		super("text_message_app");
-		//this(author, message, null);
+	public TextMessageAppMessage( String source, String author, String message) {
+		this(source, author, message, null);
 	}
 	
 	public String getAuthor() {
@@ -33,5 +31,17 @@ public class TextMessageAppMessage extends Message   {
 		this.message = message;
 	}
 
+	public String getEncodedImage() {
+		return encodedImage;
+	}
+	public void setEncodedImage(String encodedImage) {
+		this.encodedImage = encodedImage;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
 
 }
