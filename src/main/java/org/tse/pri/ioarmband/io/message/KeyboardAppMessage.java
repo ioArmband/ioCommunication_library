@@ -1,7 +1,7 @@
 package org.tse.pri.ioarmband.io.message;
 
-import org.tse.pri.ioarmband.io.message.enums.KeyboardType;
-import static org.tse.pri.ioarmband.io.message.AppMessage.AppStd.*;
+import static org.tse.pri.ioarmband.io.message.AppMessage.AppStd.KEYBOARD;
+import static org.tse.pri.ioarmband.io.message.AppMessage.AppStd.KEYBOARD_NUM;
 
 public class KeyboardAppMessage  extends AppMessage{
 	private static final long serialVersionUID = 4679425979414404587L;

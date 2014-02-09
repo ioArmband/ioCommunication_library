@@ -1,12 +1,10 @@
 package org.tse.pri.ioarmband.io.connection;
 
 import java.io.BufferedWriter;
-import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
 

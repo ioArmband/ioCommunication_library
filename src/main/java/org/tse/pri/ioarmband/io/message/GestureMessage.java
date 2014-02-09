@@ -10,12 +10,20 @@ public class GestureMessage extends Message{
 	private static final long serialVersionUID = -5753387335427689229L;
 	
 	private GestureType type;
-	private String SourceName;
+	private String sourceName;
 	
 	
 	public GestureMessage() {
 		super("gesture");
 	}
+
+	
+	public GestureMessage(GestureType type,	String sourceName) {
+		super("gesture");
+		this.type = type;
+		this.sourceName = sourceName;
+	}
+
 
 	public GestureType getType() {
 		return type;
@@ -24,15 +32,15 @@ public class GestureMessage extends Message{
 		this.type = type;
 	}
 	public String getSourceName() {
-		return SourceName;
+		return sourceName;
 	}
 	public void setSourceName(String sourceName) {
-		SourceName = sourceName;
+		this.sourceName = sourceName;
 	}
 	
 	@Override
 	public String toString() {
-		return "GestureMessage [type=" + type + ", SourceName=" + SourceName
+		return "GestureMessage [type=" + type + ", sourceName=" + sourceName
 				+ "]";
 	}
 }
