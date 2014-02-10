@@ -13,6 +13,7 @@ public class TextMessageAppMessage extends Message   {
 		this.source = source;
 		this.message = message;
 		this.author = author;
+		this.encodedImage = encodedImage;
 	}
 	public TextMessageAppMessage( String source, String author, String message) {
 		this(source, author, message, null);
