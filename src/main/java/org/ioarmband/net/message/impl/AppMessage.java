@@ -9,6 +9,10 @@ public class AppMessage  extends Message{
 	String appName;
 	String params;
 	
+	public AppMessage() {
+		super("open_app");
+	}
+	
 	public AppMessage(String applicationName, String params) {
 		super("open_app");
 		this.appName = applicationName;

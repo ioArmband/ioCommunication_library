@@ -9,6 +9,9 @@ public class MenuAppMessage extends Message{
 	private Boolean isLast;
 	private String appName;
 	
+	public MenuAppMessage() {
+		super("menu_app");
+	}
 	public MenuAppMessage(Integer appIndex, Boolean isLast, String appName) {
 		super("menu_app");
 		this.appIndex = appIndex;

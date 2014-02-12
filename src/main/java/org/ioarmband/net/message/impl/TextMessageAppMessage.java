@@ -10,6 +10,9 @@ public class TextMessageAppMessage extends Message   {
 	String author;
 	String encodedImage;
 
+	public TextMessageAppMessage() {
+		super("text_message_app");}
+	
 	public TextMessageAppMessage( String source, String author, String message, String encodedImage) {
 		super("text_message_app");
 		this.source = source;

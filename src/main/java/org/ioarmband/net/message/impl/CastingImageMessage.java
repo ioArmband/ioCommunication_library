@@ -12,6 +12,10 @@ public class CastingImageMessage extends Message {
 		this.encodedImage = encodedImage;
 	}
 	
+	public CastingImageMessage() {
+		super("casting_image");
+	}
+	
 	public String getEncodedImage() {
 		return encodedImage;
 	}

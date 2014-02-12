@@ -10,6 +10,10 @@ public class CastingRequestMessage extends Message{
 	public Integer width;
 	public Integer height;
 	
+	public CastingRequestMessage() {
+		super("casting_request");
+	}
+	
 	public CastingRequestMessage(Integer delay, Integer width, Integer height) {
 		super("casting_request");
 		this.delay = delay;

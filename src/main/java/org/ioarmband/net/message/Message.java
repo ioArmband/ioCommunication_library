@@ -17,6 +17,9 @@ public class Message  implements Serializable{
 	private static final long serialVersionUID = 7529035990603487780L;
 	private String commandName;
 	private static final Logger logger = LoggerFactory.getLogger(Command.class);
+	
+	public Message() {}
+	
 	public Message(String commandName) {
 		this.commandName = commandName;
 	}
